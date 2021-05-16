@@ -1,6 +1,6 @@
 from pokemon_env import Pokemon
 from RL_brain_DQN import DeepQNetwork
-from RL_brain_DoubleDQN import DoubleDQN
+# from RL_brain_DoubleDQN import DoubleDQN
 import tensorflow.compat.v1 as tf
 tf.compat.v1.disable_eager_execution()
 
@@ -52,9 +52,10 @@ if __name__ == "__main__":
     RL = DeepQNetwork(env.n_actions, env.n_features,
                       learning_rate=0.01,
                       reward_decay=0.9,
-                      # e_greedy=0.9,
+                      e_greedy=1.0,
                       replace_target_iter=200,  # 每 200 步替换一次 target_net 的参数
                       memory_size=2000, # 记忆上限
+                      e_greedy_increment=0.0001,#每次训练完后 Epsilon  增加的值
                       # output_graph=True   # 是否输出 tensorboard 文件
                       )
     # RL = DoubleDQN(

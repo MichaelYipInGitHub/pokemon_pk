@@ -23,8 +23,9 @@ class DeepQNetwork:
             batch_size=32,
             e_greedy_increment=0.0001,
             output_graph=False,
+            epsilon = 0.9,
     ):
-        self.epsilon = 0.9
+        self.epsilon = epsilon
         self.n_actions = n_actions
         self.n_features = n_features
         self.lr = learning_rate
