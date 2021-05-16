@@ -433,12 +433,12 @@ class Pokemon(tk.Tk, object):
 
     def enemy_get_action(self):
         enemy_action = random.sample(self.enemy_action_space, 1)[0]
-        if self.enemy_skill_current_num[0] > 0 or self.enemy_skill_current_num[1] > 0 or self.enemy_skill_current_num[
-            2] > 0 or self.enemy_skill_current_num[3] > 0:
-            while (self.enemy_skill_current_num[enemy_action] <= 0):
-                enemy_action += 1
-                if enemy_action >= 4:
-                    enemy_action = 0
+        # if self.enemy_skill_current_num[0] > 0 or self.enemy_skill_current_num[1] > 0 or self.enemy_skill_current_num[
+        #     2] > 0 or self.enemy_skill_current_num[3] > 0:
+        #     while (self.enemy_skill_current_num[enemy_action] <= 0):
+        #         enemy_action += 1
+        #         if enemy_action >= 4:
+        #             enemy_action = 0
         return enemy_action
 
     def get_hurt(self, level, my_attack, enemy_defend, power):
