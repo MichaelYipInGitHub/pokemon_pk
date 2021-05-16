@@ -429,7 +429,7 @@ class Pokemon(tk.Tk, object):
         else:
             done = False
 
-        return s_, reward, done
+        return s_, reward, done, ''
 
     def enemy_get_action(self):
         enemy_action = random.sample(self.enemy_action_space, 1)[0]

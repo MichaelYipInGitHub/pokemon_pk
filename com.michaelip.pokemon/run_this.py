@@ -19,7 +19,7 @@ def run_pokemon():
             action = RL.choose_action(observation)
 
             # 环境根据行为给出下一个 state, reward, 是否终止
-            observation_, reward, done = env.step(action)
+            observation_, reward, done, _ = env.step(action)
 
             # DQN 存储记忆
             RL.store_transition(observation, action, reward, observation_)
