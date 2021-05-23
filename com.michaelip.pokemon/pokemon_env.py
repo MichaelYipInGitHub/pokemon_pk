@@ -394,9 +394,9 @@ class Pokemon(tk.Tk, object):
 
         more_reward = 0
         if action == 4 and self.hp_up_current_num > 0 and (self.my_current_hp / self.my_hp) < 0.63:
-            more_reward = 800
+            more_reward = 200000
         elif (self.my_current_hp / self.my_hp) >= 0.63 and action in (0, 1, 2, 3):
-            more_reward = 800
+            more_reward = 200000
         reward = 1 * (self._my_current_hp - self.my_current_hp) - 1 * (self._enemy_current_hp - self.enemy_current_hp) \
                  + more_reward
 

@@ -7,7 +7,7 @@ tf.compat.v1.disable_eager_execution()
 def run_pokemon():
     step = 0    # 用来控制什么时候学习
     win_count = 0
-    for episode in range(400):
+    for episode in range(5000):
         # 初始化环境
         observation = env.reset()
         print('episode:%s start'%(episode+1))
@@ -38,8 +38,8 @@ def run_pokemon():
                 break
             step += 1   # 总步数
 
-        if ((episode+1) % 10 == 0):
-            print('胜率：%s/10'%(win_count))
+        if ((episode+1) % 1000 == 0):
+            print('胜率：%s/1000'%(win_count))
             win_count = 0
 
     # end of game
